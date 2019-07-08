@@ -1,0 +1,11 @@
+<h1><small>Buscando: </small>{{hero}}</h1>
+<div class="row" *ngIf="show">
+    <div class="col">
+     <div class="alert alert-info" role="alert">
+            <strong>No existete resultado para el heroes: {{hero}}</strong>
+        </div>
+    </div>
+</div>
+<!-- input -> [hero]="hero" -> le paso a mi variable [hero] de card el valor de heroFather  -->
+<!-- Output ->(selectHero)  escucho los cambios del hijo el  $event recibo el evento emitido en el hijo, el id-->
+<app-card (selectHero)="showHero($event)"  [hero]="heroFather" *ngFor="let heroFather of heroResult"></app-card>
